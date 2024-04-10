@@ -24,7 +24,7 @@ jobs:
           npm run build
       - uses: docker://pandoc/latex:latest
         with:
-          working_dir: ./paper/src
+          workdir: /github/workspace/src
           args: "-s main.tex -o ../output/paper.html --number-sections --template ../template/template.html--cite"
       - name: Copy paper to website
         working-directory: ./
