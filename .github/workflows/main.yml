@@ -23,8 +23,8 @@ jobs:
           npm install
           npm run build
       - name: Generate paper
+        uses: pandoc/latex:latest
         working-directory: ./src
-        uses: docker://pandoc/latex:latest
         with:
           workdir: /github/workspace/src
           args: "-s main.tex -o ../output/paper.html --number-sections --template ../template/template.html--cite"
