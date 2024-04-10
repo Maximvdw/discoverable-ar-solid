@@ -24,7 +24,7 @@ jobs:
           npm run build
       - uses: docker://pandoc/latex:2.9
         with:
-          args: "-s ./paper/src/main.tex -o ./paper/output/paper.html --number-sections --template ./paper/template/template.html--cite"
+          args: "-s ./paper/src/main.tex -o ./paper/output/paper.html --number-sections --template ./paper/template/template.html --cite"
       - name: Copy paper to website
         working-directory: ./
         run: |
