@@ -5,6 +5,7 @@ const markdownIt = require("markdown-it");
 const pluginTOC = require('eleventy-plugin-toc');
 const pluginSASS = require("eleventy-sass");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const markdownItAttrs = require('markdown-it-attrs');
 
 const nunjucks = require("nunjucks");
 const markdown = require('nunjucks-markdown');
@@ -20,6 +21,11 @@ module.exports = function (el) {
 
   /* Markdown */
   const md = markdownIt({ html: true });
+  md.use(markdownItAttrs, {
+    leftDelimiter: '{',
+    rightDelimiter: '}',
+    allowedAttributes: []
+  });
   el.setLibrary("md", md);
   el.addPlugin(pluginTOC, {
     tags: ['h2'],

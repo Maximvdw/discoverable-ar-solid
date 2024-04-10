@@ -1,7 +1,5 @@
 node_modules
 _site
-.cache
-.env
-tmp*/
-_scripts/*.jar
-_scripts/myDocumentation
+paper/output/*
+!paper/output/.gitkeep
+
