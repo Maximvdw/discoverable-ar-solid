@@ -23,7 +23,7 @@ jobs:
           npm install
           npm run build
       - name: Generate paper
-        uses: pandoc/latex:latest
+        uses: docker://pandoc/latex:latest
         working-directory: ./src
         with:
           workdir: /github/workspace/src
