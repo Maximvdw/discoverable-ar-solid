@@ -1,15 +1,13 @@
 {
-  "name": "fidmark-website",
+  "name": "sosy24",
   "version": "0.1.0",
-  "description": "FidMark",
   "main": "index.js",
-  "repository": "https://github.com/OpenHPS/FidMark.git",
+  "repository": "https://github.com/Maximvdw/sosy2024.git",
   "author": {
     "name": "Maxim Van de Wynckel",
     "email": "maxim.van.de.wynckel@vub.be"
   },
   "contributors": [
-    "Isaac Valadez",
     "Beat Signer"
   ],
   "license": "Apache-2.0",
