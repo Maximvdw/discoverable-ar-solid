@@ -1,0 +1,15 @@
+<#> a seas:Room ; rdfs:label "Our Lab"@en ;
+	vcard:address [ ... ] .
+
+<#table_marker> a fidmark:AruCo ;
+  fidmark:hasDictionary fidmark:DICT_ARUCO_ORIGINAL ;
+  fidmark:markerIdentifier 12 ;
+  fidmark:hasOrigin fidmark:OriginCenter ;
+  fidmark:hasHeight [ a qudt:QuantityValue;
+      qudt:unit unit:MilliM;
+      qudt:numericValue "150"^^xsd:double
+  ] ;
+  fidmark:hasWidth [ a qudt:QuantityValue;
+      qudt:unit unit:MilliM;
+      qudt:numericValue "150"^^xsd:double
+  ] .

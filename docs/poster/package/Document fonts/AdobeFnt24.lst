@@ -1,0 +1,87 @@
+%!Adobe-FontList 1.24
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ITCAvantGardeStd-Bk
+FamilyName:ITC Avant Garde Gothic Std
+StyleName:Book
+FullName:ITC Avant Garde Gothic Std Book
+MenuName:ITC Avant Garde Std Bk
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-Bk.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:49936
+FileModTime:1670858696
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,ITC Avant Garde Std Bk
+NameArray:0,Mac,4,ITC Avant Garde Gothic Std Book
+NameArray:0,Win,1,ITC Avant Garde Std Bk
+NameArray:0,Win,16,ITC Avant Garde Gothic Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ITCAvantGardeStd-Bold
+FamilyName:ITC Avant Garde Gothic Std
+StyleName:Bold
+FullName:ITC Avant Garde Gothic Std Bold
+MenuName:ITC Avant Garde Std Md
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:51992
+FileModTime:1670858696
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,ITC Avant Garde Std Bold
+NameArray:0,Mac,4,ITC Avant Garde Gothic Std Bold
+NameArray:0,Win,1,ITC Avant Garde Std Md
+NameArray:0,Win,16,ITC Avant Garde Gothic Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:ITCAvantGardeStd-BoldCn
+FamilyName:ITC Avant Garde Gothic Std
+StyleName:Bold Condensed
+FullName:ITC Avant Garde Gothic Std Bold Condensed
+MenuName:ITC Avant Garde Std Cn
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-BoldCn.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:29984
+FileModTime:1670858696
+WeightClass:700
+WidthClass:3
+AngleClass:0
+NameArray:0,Mac,18,ITC Avant Garde Std Bold Cn
+NameArray:0,Mac,4,ITC Avant Garde Gothic Std Bold Condensed
+NameArray:0,Win,1,ITC Avant Garde Std Cn
+NameArray:0,Win,16,ITC Avant Garde Gothic Std
+%EndFont
+
