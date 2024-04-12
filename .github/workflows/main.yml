@@ -31,7 +31,7 @@ jobs:
         run: |
           yarn install
           node ./postprocess.js
-          cp -r ../output ./website/_site
+          cp -r ../output ../../website/_site
       # - name: Build example application
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
