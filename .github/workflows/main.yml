@@ -26,8 +26,12 @@ jobs:
         working-directory: .
         run: |
           docker-compose up
-          cp -r ./paper/output/paper.html ./website/_site/paper.html
-          cp -r ./paper/src/images ./website/_site/images
+      - name: Postprocess paper
+        working-directory: ./paper/scripts
+        run: |
+          yarn install
+          node ./postprocess.js
+          cp -r ../output ./website/_site
       # - name: Build example application
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
