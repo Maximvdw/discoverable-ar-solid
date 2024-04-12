@@ -1,0 +1,8 @@
+@prefix card: <https://{user2}/profile/card#> .
+@prefix office: <https://{user2}/environments/user1-office/data.ttl#> .
+
+<> a schema:TransferAction ;
+  schema:description "Moved 'painting'"@en ;
+  schema:agent <https://ar-app.com/id> ;
+  schema:creator card:me ;
+  schema:object office:painting ; schema:result office:painting .
