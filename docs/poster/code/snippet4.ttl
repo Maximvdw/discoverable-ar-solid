@@ -1,0 +1,10 @@
+:earth_object a sosa:FeatureOfInterest, ogc:SpatialObject ;
+  poso:hasPosition [ a poso:RelativePosition ;
+    poso:isRelativeTo example:marker-1 ;
+    poso:xAxisValue [ a qudt:QuantityValue ; qudt:unit unit:MilliM ; 	   qudt:numericValue "0"^^xsd:double ] ;
+    poso:yAxisValue [ a qudt:QuantityValue ; qudt:unit unit:MilliM ;         qudt:numericValue "0"^^xsd:double ] ;
+    poso:zAxisValue [ a qudt:QuantityValue;  qudt:unit unit:MilliM ;
+      qudt:numericValue "100"^^xsd:double ]] ;
+  omg:hasGeometry [ a omg:Geometry ;
+    fog:asGltf "https://raw.githubusercontent.com/microsoft/mixed-                     reality-extension-sdk-samples/master/samples/solar-                     system/public/assets/earth.gltf"^^xsd:anyURI
+  ] .

@@ -15,6 +15,7 @@ const _ = require("lodash");
 module.exports = function (el) {
   /* Passthrough Copy */
   el.setDataDeepMerge(true);
+  el.addPassthroughCopy({ 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js': 'js/bootstrap.bundle.min.js' });
 
   /* Navigation */
   el.addPlugin(pluginNavigation);
@@ -80,7 +81,8 @@ module.exports = function (el) {
       "png",
       "pdf",
       'gif',
-      "mp4"
+      "mp4",
+      "js"
     ],
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",

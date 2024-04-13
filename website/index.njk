@@ -107,3 +107,24 @@ projects behind the scenes to enable the proposed solution.
       </div>
   </div>
 </div>
+
+<div class="modal fade" id="arModal" tabindex="-1" aria-labelledby="arModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="arModalLabel">Augmented Reality</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to see the poster with additional augmented reality information or stay on this page for more information?</p>
+        <p>The augmented reality scene on top of the poster does not use Solid and is created using Adobe Aero.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="redirect()">Augmented Reality</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Stay on Page</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade"></div>
+<script src="./js/poster.js"></script>
