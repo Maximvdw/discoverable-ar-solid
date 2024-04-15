@@ -1,5 +1,5 @@
 %!Adobe-FontList 1.24
-%Locale:0x413
+%Locale:0x409
 
 %BeginFont
 Handler:DirectoryHandler
@@ -11,7 +11,7 @@ FullName:ITC Avant Garde Gothic Std Book Condensed
 MenuName:ITC Avant Garde Std Bk Cn
 StyleBits:0
 WritingScript:Roman
-OutlineFileName:D:\Data\workspace\sosy2024\docs\poster\package\Document fonts\ITC Avant Garde Gothic Std Book Condensed.otf
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITC Avant Garde Gothic Std Book Condensed.otf
 DataFormat:sfntData
 UsesStandardEncoding:yes
 isCFF:yes
@@ -19,7 +19,7 @@ hasSVG:no
 hasCOLR:no
 VariableFontType:NonVariableFont
 FileLength:30696
-FileModTime:1712939625
+FileModTime:1713175253
 WeightClass:300
 WidthClass:3
 AngleClass:0
@@ -39,7 +39,7 @@ FullName:ITC Avant Garde Gothic Std Book
 MenuName:ITC Avant Garde Std Bk
 StyleBits:0
 WritingScript:Roman
-OutlineFileName:D:\Data\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-Bk.otf
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-Bk.otf
 DataFormat:sfntData
 UsesStandardEncoding:yes
 isCFF:yes
@@ -47,7 +47,7 @@ hasSVG:no
 hasCOLR:no
 VariableFontType:NonVariableFont
 FileLength:49936
-FileModTime:1712939563
+FileModTime:1670858696
 WeightClass:300
 WidthClass:5
 AngleClass:0
@@ -67,7 +67,7 @@ FullName:ITC Avant Garde Gothic Std Bold
 MenuName:ITC Avant Garde Std Md
 StyleBits:2
 WritingScript:Roman
-OutlineFileName:D:\Data\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-Bold.otf
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-Bold.otf
 DataFormat:sfntData
 UsesStandardEncoding:yes
 isCFF:yes
@@ -75,7 +75,7 @@ hasSVG:no
 hasCOLR:no
 VariableFontType:NonVariableFont
 FileLength:51992
-FileModTime:1712939563
+FileModTime:1670858696
 WeightClass:700
 WidthClass:5
 AngleClass:0
@@ -95,7 +95,7 @@ FullName:ITC Avant Garde Gothic Std Bold Condensed
 MenuName:ITC Avant Garde Std Cn
 StyleBits:2
 WritingScript:Roman
-OutlineFileName:D:\Data\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-BoldCn.otf
+OutlineFileName:D:\maxim\workspace\sosy2024\docs\poster\package\Document fonts\ITCAvantGardeStd-BoldCn.otf
 DataFormat:sfntData
 UsesStandardEncoding:yes
 isCFF:yes
@@ -103,7 +103,7 @@ hasSVG:no
 hasCOLR:no
 VariableFontType:NonVariableFont
 FileLength:29984
-FileModTime:1712939563
+FileModTime:1670858696
 WeightClass:700
 WidthClass:3
 AngleClass:0
