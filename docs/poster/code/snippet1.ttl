@@ -6,9 +6,9 @@
   fidmark:hasDictionary fidmark:DICT_ARUCO_ORIGINAL ;
   fidmark:markerIdentifier 94 ;
   fidmark:hasOrigin fidmark:OriginCenter ;
-  fidmark:hasHeight [ a qudt:QuantityValue;
-      qudt:unit unit:MilliM; qudt:numericValue "80"^^xsd:double
+  fidmark:hasHeight [ a qudt:QuantityValue ;
+      qudt:unit unit:MilliM ; qudt:numericValue "80"^^xsd:double
   ] ;
-  fidmark:hasWidth [ a qudt:QuantityValue;
-      qudt:unit unit:MilliM; qudt:numericValue "80"^^xsd:double
+  fidmark:hasWidth [ a qudt:QuantityValue ;
+      qudt:unit unit:MilliM ; qudt:numericValue "80"^^xsd:double
   ] .
