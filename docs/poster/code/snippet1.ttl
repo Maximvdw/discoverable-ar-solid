@@ -7,8 +7,8 @@
   fidmark:markerIdentifier 94 ;
   fidmark:hasOrigin fidmark:OriginCenter ;
   fidmark:hasHeight [ a qudt:QuantityValue;
-      qudt:unit unit:MilliM; qudt:numericValue "150"^^xsd:double
+      qudt:unit unit:MilliM; qudt:numericValue "80"^^xsd:double
   ] ;
   fidmark:hasWidth [ a qudt:QuantityValue;
-      qudt:unit unit:MilliM; qudt:numericValue "150"^^xsd:double
+      qudt:unit unit:MilliM; qudt:numericValue "80"^^xsd:double
   ] .
