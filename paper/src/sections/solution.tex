@@ -41,6 +41,16 @@ When another user (e.g.~user~2) wants to modify the environment of user~1, they 
 An alternative architecture is illustrated in \figurename~\ref{fig:architecture_2}. In this scenario, a fixed Bluetooth beacon is placed in a room, broadcasting the URI of a single environment. This scenario can be used for public physical environments, such as a meeting room or laboratory, enabling collaboration in AR. Similar to personal environments shown in \figurename~\ref{fig:architecture}, users store their changes to an environment in their Solid Pod and reference these changes in the inbox of the environment.
 
 \subsection{Usage}
+Our solution is depicted in \figurename~\ref{fig:flow} where we showcase the flow of our architecture previously illustrated in \figurename~\ref{fig:architecture}. Two users with AR devices have their own Solid Pod. User~1 will create an environment ($A$) on their Pod and subscribe to the inbox container of this environment. Once the environment is ready, the AR device will use the SemBeacon specification to advertise the URI of the environment to enable its discovery.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.90]{images/flow.pdf}
+\caption{Interaction flow of two users contributing to the same augmented reality environment} \label{fig:flow}
+\end{figure}
+
+When another user, such as user~2 discovers the resource URI the AR application will access the environment to visualise the augmented objects. If user~2 makes a modification such as adding virtual objects, these modifications are stored in the Pod of user~2 as environment $A'$, ensuring ownership of this contribution and enabling user~2 to choose the access rights to this modification. To keep up-to-date with changes in the original environment, the application will listen for changes in the inbox of environment $A$. All users who are subscribed to this inbox will receive notifications whenever a new modification is added.
+
 An inbox uses the LDP\footnote{\url{https://www.w3.org/ns/ldp\#}} vocabulary to index all resources within this container. A user who wishes to accept contributors for their environment should configure this inbox container with public \textit{append} access rights, giving other users the opportunity to append a new resource to the container. Each inbox item represents an action using the \mbox{schema.org} vocabulary~\cite{10.1002/asi.24744}.
 
 \begin{listing}[htb]

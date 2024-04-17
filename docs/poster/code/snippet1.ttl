@@ -1,6 +1,6 @@
 <> a seas:Room ; rdfs:label "Our Lab"@en ;
+    ldp:inbox <./inbox/> ;
 	vcard:address [ ... ] .
-
 :table_marker a fidmark:AruCo ;
   poso:hasPosition [ poso:isRelativeTo <> ] ;
   fidmark:hasDictionary fidmark:DICT_ARUCO_ORIGINAL ;

@@ -26,6 +26,9 @@ jobs:
         working-directory: .
         run: |
           docker-compose up
+      - name: Copying poster
+        run: |
+          cp ./docs/poster/package/SoSy2024-Maxim.pdf ./website/_site/poster.pdf
       - name: Postprocess paper
         working-directory: ./paper/scripts
         run: |

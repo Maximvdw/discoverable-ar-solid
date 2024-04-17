@@ -1,6 +1,6 @@
 :earth_object a sosa:FeatureOfInterest, ogc:SpatialObject ;
   poso:hasPosition [ a poso:RelativePosition ;
-    poso:isRelativeTo example:marker-1 ;
+    poso:isRelativeTo :table_marker ;
     poso:xAxisValue [ a qudt:QuantityValue ; qudt:unit unit:MilliM ; 	   qudt:numericValue "0"^^xsd:double ] ;
     poso:yAxisValue [ a qudt:QuantityValue ; qudt:unit unit:MilliM ;         qudt:numericValue "0"^^xsd:double ] ;
     poso:zAxisValue [ a qudt:QuantityValue;  qudt:unit unit:MilliM ;

@@ -1,3 +1,4 @@
+@prefix schema: <https://schema.org/> .
 @prefix card: <https://{user2}/profile/card#> .
 @prefix office: <https://{user2}/environments/user1-office/data.ttl#> .
 
@@ -5,4 +6,4 @@
   schema:description "Created a new object 'Earth'"@en ;
   schema:agent <https://ar-app.com/id> ;
   schema:creator card:me ;
-  schema:object office:earth_object ; schema:result office:earth_object .
+  schema:object office:earth_object; schema:result office:earth_object.
