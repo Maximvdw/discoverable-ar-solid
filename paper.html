@@ -164,6 +164,32 @@ environment in their Solid Pod and reference these changes in the inbox
 of the environment.</p>
 <h2 data-number="2.1" id="usage"><span
 class="header-section-number">2.1</span> Usage</h2>
+<p>Our solution is depicted in Figure <a href="#fig:flow"
+data-reference-type="ref" data-reference="fig:flow">3</a> where we
+showcase the flow of our architecture previously illustrated in
+Figure <a href="#fig:architecture" data-reference-type="ref"
+data-reference="fig:architecture">1</a>. Two users with AR devices have
+their own Solid Pod. User 1 will create an environment (<span
+class="math inline"><em>A</em></span>) on their Pod and subscribe to the
+inbox container of this environment. Once the environment is ready, the
+AR device will use the SemBeacon specification to advertise the URI of
+the environment to enable its discovery.</p>
+<figure id="fig:flow">
+<img src="images/flow.png">
+<figcaption>Interaction flow of two users contributing to the same
+augmented reality environment</figcaption>
+</figure>
+<p>When another user, such as user 2 discovers the resource URI the AR
+application will access the environment to visualise the augmented
+objects. If user 2 makes a modification such as adding virtual objects,
+these modifications are stored in the Pod of user 2 as environment <span
+class="math inline"><em>A</em>′</span>, ensuring ownership of this
+contribution and enabling user 2 to choose the access rights to this
+modification. To keep up-to-date with changes in the original
+environment, the application will listen for changes in the inbox of
+environment <span class="math inline"><em>A</em></span>. All users who
+are subscribed to this inbox will receive notifications whenever a new
+modification is added.</p>
 <p>An inbox uses the LDP<a href="#fn5" class="footnote-ref" id="fnref5"
 role="doc-noteref"><sup>5</sup></a> vocabulary to index all resources
 within this container. A user who wishes to accept contributors for
@@ -357,10 +383,11 @@ href="https://doi.org/{10.1007/978-3-642-41338-4_17}">{10.1007/978-3-642-41338-4
 </div>
 <div id="ref-fidmark" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[12] </div><div class="csl-right-inline">M.
-Van de Wynckel, I. Valadez, and B. Signer, <span>“FidMark: A fiducial
-marker ontology for semantically describing visual markers,”</span> in
-<em>Proceedings of the semantic web – 21st international
-conference</em>, 2024 (Accepted).</div>
+Van de Wynckel, I. Valadez, and B. Signer, <span>“<span
+class="nocase">FidMark: A Fiducial Marker Ontology for Semantically
+Describing Visual Markers</span>,”</span> in <em><span
+class="nocase">Proceedings of The Semantic Web – 21st International
+Conference</span></em>, 2024 (Accepted).</div>
 </div>
 <div id="ref-01H1940MY7FSFV0W0J44E3CCX7" class="csl-entry"
 role="listitem">
