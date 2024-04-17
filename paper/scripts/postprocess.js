@@ -29,7 +29,7 @@ async function process() {
         fs.rmSync(path.join(outputDir, pages[0].name));
 
         // Replace <embed src=...> with <img src=...> in paper.html
-        paperHtml = paperHtml.replace(`<embed src="images/${path.basename(pdfFile)}">`, `<img src="images/${pngFileName}">`);
+        paperHtml = paperHtml.replace(`<embed src="images/${path.basename(pdfFile)}" />`, `<img src="images/${pngFileName}">`);
     }));
     
     // Get all listings from the paper
