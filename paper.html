@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
   <link rel="stylesheet" href="./css/paper.css?version=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Maxim Van de Wynckel" />
-  <meta name="author" content="Beat Signer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Maxim Van de Wynckel">
+  <meta name="author" content="Beat Signer">
   <title>Discoverable and Interoperable Augmented Reality Environments Through Solid Pods</title>
 </head>
 <body>
@@ -21,20 +19,20 @@ Environments Through Solid Pods</h1>
 <p class="author">Beat Signer</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
-<p>Augmented Reality (AR) environments are physical environments with
+<p>Augmented Reality&nbsp;(AR) environments are physical environments with
 virtual objects superimposed through AR-enabled devices. These virtual
 objects can range from simple aesthetic objects such as pictures to
 superimposed contextual information about physical items. In most modern
-AR applications, these augmented spaces exist only for the user who
+AR&nbsp;applications, these augmented spaces exist only for the user who
 created the environment or for proprietary applications that enable
 multi-user collaboration in the same environment. However, there is a
 lack of solutions that enable interoperable collaboration in these
-personal AR spaces, allowing users to share and contribute to an
-AR space. We propose a solution that enables users to create their
-personal AR space that can then be discovered by other users who are in
+personal AR&nbsp;spaces, allowing users to share and contribute to an
+AR&nbsp;space. We propose a solution that enables users to create their
+personal AR&nbsp;space that can then be discovered by other users who are in
 physical proximity to this space, enabling them to view or contribute to
 the augmented space. In addition, we discuss a solution that utilises
-the same technique to create AR spaces that are bound to a specific room
+the same technique to create AR&nbsp;spaces that are bound to a specific room
 and can be discovered by users who are in close vicinity to these
 rooms.</p>
 </div>
@@ -51,52 +49,43 @@ url=https://beatsigner.com, ]</p>
 <p>Solid , Augmented Reality , Physical Pod Discovery , AR
 Collaboration</p>
 </div>
-<h1 data-number="1" id="introduction-and-related-work"><span
-class="header-section-number">1</span> Introduction and Related
+<h1 data-number="1" id="introduction-and-related-work"><span class="header-section-number">1</span> Introduction and Related
 Work</h1>
-<p>In Augmented reality (AR), virtual objects are superimposed onto the
+<p>In Augmented reality&nbsp;(AR), virtual objects are superimposed onto the
 physical world. Since its early days, AR has significantly advanced to
-portable devices such as smartphones and head-mounted displays <span
-class="citation" data-cites="10.5555/2427126">[1]</span>, enabling its
+portable devices such as smartphones and head-mounted displays&nbsp;<span class="citation" data-cites="10.5555/2427126">[1]</span>, enabling its
 use in regular environments such as office buildings to superimpose
 virtual information to the physical world.</p>
 <p>Superimposed virtual objects or information can be anchored to
-physical objects and walls within these physical environments <span
-class="citation"
-data-cites="10.1145/3301275.3302278 kalaitzakis2021fiducial">[2],
+physical objects and walls within these physical environments&nbsp;<span class="citation" data-cites="10.1145/3301275.3302278 kalaitzakis2021fiducial">[2],
 [3]</span>. These virtual objects can range from textual information
 such as timers or instructions to images, videos or interactive
-elements <span class="citation" data-cites="6948506">[4]</span>.
+elements&nbsp;<span class="citation" data-cites="6948506">[4]</span>.
 However, there is a lack of AR solutions that enable collaboration on
 the creation of these AR environments without the need for proprietary
 applications.</p>
 <p>A conceptual content sharing solution for AR, offering a peer-to-peer
 and client-server collaboration solution using events that indicate
-changes to the virtual objects, was proposed in <span class="citation"
-data-cites="236306">[5]</span>. While this solution supports
+changes to the virtual objects, was proposed in&nbsp;<span class="citation" data-cites="236306">[5]</span>. While this solution supports
 collaboration in AR, it still requires a complex communication framework
 and does not tackle the problem of different devices using a different
-frame of reference <span class="citation"
-data-cites="mou2004frames">[6]</span>.</p>
+frame of reference&nbsp;<span class="citation" data-cites="mou2004frames">[6]</span>.</p>
 <p>We propose an interoperable solution that enables users to create
 their personal AR environments that can be discovered in the physical
 world by other users using AR-enabled devices. Unlike existing
-work <span class="citation" data-cites="10.1145/3567721">[7]</span>, we
+work&nbsp;<span class="citation" data-cites="10.1145/3567721">[7]</span>, we
 aim for an interoperable solution that decentralises the collaborative
 aspect of AR environments, while also enabling the sharing of crucial
 environmental information such as common reference spaces.</p>
-<h1 data-number="2" id="solution"><span
-class="header-section-number">2</span> Solution</h1>
+<h1 data-number="2" id="solution"><span class="header-section-number">2</span> Solution</h1>
 <p>The goal of our proposed solution is to allow multiple AR devices to
 contribute to a single shared AR environment or virtual space belonging
 to a user. We assume that the AR device used to contribute to augmented
 environments is a smart device that has access to the Web and can
 broadcast an RF signal. In the general architecture of our proposed
 solution, we let AR devices broadcast a semantic Bluetooth Low
-Energy (BLE) beacon advertisement <span class="citation"
-data-cites="10.1145/3627050.3627060">[8]</span> containing the URI of a
-specific resource as illustrated in Figure <a href="#fig:architecture"
-data-reference-type="ref" data-reference="fig:architecture">1</a>. This
+Energy&nbsp;(BLE) beacon advertisement&nbsp;<span class="citation" data-cites="10.1145/3627050.3627060">[8]</span> containing the URI of a
+specific resource as illustrated in Figure&nbsp;<a href="#fig:architecture" data-reference-type="ref" data-reference="fig:architecture">1</a>. This
 resource contains information about the personal environment(s) owned by
 the user. Other devices can receive these advertisements when in
 proximity to the AR device and then access the URI to retrieve more
@@ -108,13 +97,11 @@ enables users to both contribute to the same environment as well as
 control the access rights of modifications made to these
 environments.</p>
 <figure id="fig:architecture">
-<img src="images/sosy_architecture.png">
+<embed src="images/sosy_architecture.pdf">
 <figcaption>A user’s discoverable AR environments with two example users
 (#1 and #2) having a Solid Pod</figcaption>
 </figure>
-<p>On the left-hand side of the architecture shown in Figure <a
-href="#fig:architecture" data-reference-type="ref"
-data-reference="fig:architecture">1</a>, we have a Solid Pod for user 1.
+<p>On the left-hand side of the architecture shown in Figure&nbsp;<a href="#fig:architecture" data-reference-type="ref" data-reference="fig:architecture">1</a>, we have a Solid Pod for user&nbsp;1.
 The Pod contains all environments owned or modified by the user. An AR
 device connects to the user’s Solid Pod through a Solid application that
 authenticates the user, allowing it to modify the resources when editing
@@ -124,99 +111,80 @@ environment it is currently in via BLE advertisements. This resource
 contains all the information about the environment, such as its
 location, any identifiable features and all virtual objects placed
 relative within this environment.</p>
-<p>When another user (e.g. user 2) wants to modify the environment of
-user 1, they create a new resource including the modifications and
-additions to virtual objects or detectable features (e.g. markers). The
-application will then notify user 1 about these changes by referencing
-the <code>user1-office/data.ttl</code> file in the <em>inbox</em> <span
-class="citation" data-cites="10.1007/978-3-319-58068-5_33">[9]</span>
+<p>When another user (e.g.&nbsp;user&nbsp;2) wants to modify the environment of
+user&nbsp;1, they create a new resource including the modifications and
+additions to virtual objects or detectable features (e.g.&nbsp;markers). The
+application will then notify user&nbsp;1 about these changes by referencing
+the <code>user1-office/data.ttl</code> file in the <em>inbox</em>&nbsp;<span class="citation" data-cites="10.1007/978-3-319-58068-5_33">[9]</span>
 container of the environment that is being modified.</p>
 <figure id="fig:architecture_2">
-<img src="images/sosy_architecture_2.png">
-<pre class="turtle" data-xleftmargin="5pt" data-fontsize="\small"><code>&lt;#&gt; a seas:Room ; rdfs:label &quot;Our Lab&quot;@en ;
-  vcard:address [ ... ] .
-&lt;#printer_marker&gt; a fidmark:AruCo ;
-  fidmark:markerIdentifier 12 .
-&lt;#printer_info&gt; a sosa:FeatureOfInterest ;
-  poso:hasPosition [ 
-    poso:isRelativeTo &lt;#printer_marker&gt; ;
-    ... ] ;
-  omg:hasGeometry [ ... ] .</code></pre>
+<embed src="images/sosy_architecture_2.pdf">
+<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#D8DEE9FF">&lt;#&gt; </span><span style="color:#81A1C1">a</span><span style="color:#81A1C1"> seas:</span><span style="color:#D8DEE9FF">Room ; </span><span style="color:#81A1C1">rdfs:</span><span style="color:#D8DEE9FF">label </span><span style="color:#ECEFF4">"</span><span style="color:#A3BE8C">Our Lab</span><span style="color:#ECEFF4">"</span><span style="color:#D8DEE9FF">@</span><span style="color:#8FBCBB">en</span><span style="color:#D8DEE9FF"> ;</span></span>
+<span class="line"><span style="color:#81A1C1">  vcard:</span><span style="color:#D8DEE9FF">address [ ... ] .</span></span>
+<span class="line"><span style="color:#D8DEE9FF">&lt;#printer_marker&gt; </span><span style="color:#81A1C1">a</span><span style="color:#81A1C1"> fidmark:</span><span style="color:#D8DEE9FF">AruCo ;</span></span>
+<span class="line"><span style="color:#81A1C1">  fidmark:</span><span style="color:#D8DEE9FF">markerIdentifier </span><span style="color:#B48EAD">12</span><span style="color:#D8DEE9FF"> .</span></span>
+<span class="line"><span style="color:#D8DEE9FF">&lt;#printer_info&gt; </span><span style="color:#81A1C1">a</span><span style="color:#81A1C1"> sosa:</span><span style="color:#D8DEE9FF">FeatureOfInterest ;</span></span>
+<span class="line"><span style="color:#81A1C1">  poso:</span><span style="color:#D8DEE9FF">hasPosition [ </span></span>
+<span class="line"><span style="color:#81A1C1">    poso:</span><span style="color:#D8DEE9FF">isRelativeTo &lt;#printer_marker&gt; ;</span></span>
+<span class="line"><span style="color:#D8DEE9FF">    ... ] ;</span></span>
+<span class="line"><span style="color:#81A1C1">  omg:</span><span style="color:#D8DEE9FF">hasGeometry [ ... ] .</span></span></code></pre>
 <figcaption>Single discoverable AR environment using the
-<code>seas</code><a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>, <code>fidmark</code><a href="#fn2"
-class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>,
-<code>poso</code><a href="#fn3" class="footnote-ref" id="fnref3"
-role="doc-noteref"><sup>3</sup></a> and <code>omg</code><a href="#fn4"
-class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
+<code>seas</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, <code>fidmark</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>,
+<code>poso</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> and <code>omg</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
 vocabularies</figcaption>
 </figure>
-<p>An alternative architecture is illustrated in Figure <a
-href="#fig:architecture_2" data-reference-type="ref"
-data-reference="fig:architecture_2">2</a>. In this scenario, a fixed
+<p>An alternative architecture is illustrated in Figure&nbsp;<a href="#fig:architecture_2" data-reference-type="ref" data-reference="fig:architecture_2">2</a>. In this scenario, a fixed
 Bluetooth beacon is placed in a room, broadcasting the URI of a single
 environment. This scenario can be used for public physical environments,
 such as a meeting room or laboratory, enabling collaboration in AR.
-Similar to personal environments shown in Figure <a
-href="#fig:architecture" data-reference-type="ref"
-data-reference="fig:architecture">1</a>, users store their changes to an
+Similar to personal environments shown in Figure&nbsp;<a href="#fig:architecture" data-reference-type="ref" data-reference="fig:architecture">1</a>, users store their changes to an
 environment in their Solid Pod and reference these changes in the inbox
 of the environment.</p>
-<h2 data-number="2.1" id="usage"><span
-class="header-section-number">2.1</span> Usage</h2>
-<p>Our solution is depicted in Figure <a href="#fig:flow"
-data-reference-type="ref" data-reference="fig:flow">3</a> where we
+<h2 data-number="2.1" id="usage"><span class="header-section-number">2.1</span> Usage</h2>
+<p>Our solution is depicted in Figure&nbsp;<a href="#fig:flow" data-reference-type="ref" data-reference="fig:flow">3</a> where we
 showcase the flow of our architecture previously illustrated in
-Figure <a href="#fig:architecture" data-reference-type="ref"
-data-reference="fig:architecture">1</a>. Two users with AR devices have
-their own Solid Pod. User 1 will create an environment (<span
-class="math inline"><em>A</em></span>) on their Pod and subscribe to the
+Figure&nbsp;<a href="#fig:architecture" data-reference-type="ref" data-reference="fig:architecture">1</a>. Two users with AR devices have
+their own Solid Pod. User&nbsp;1 will create an environment (<span class="math inline"><em>A</em></span>) on their Pod and subscribe to the
 inbox container of this environment. Once the environment is ready, the
 AR device will use the SemBeacon specification to advertise the URI of
 the environment to enable its discovery.</p>
 <figure id="fig:flow">
-<img src="images/flow.png">
+<embed src="images/flow.pdf">
 <figcaption>Interaction flow of two users contributing to the same
 augmented reality environment</figcaption>
 </figure>
-<p>When another user, such as user 2 discovers the resource URI the AR
+<p>When another user, such as user&nbsp;2 discovers the resource URI the AR
 application will access the environment to visualise the augmented
-objects. If user 2 makes a modification such as adding virtual objects,
-these modifications are stored in the Pod of user 2 as environment <span
-class="math inline"><em>A</em>′</span>, ensuring ownership of this
-contribution and enabling user 2 to choose the access rights to this
+objects. If user&nbsp;2 makes a modification such as adding virtual objects,
+these modifications are stored in the Pod of user&nbsp;2 as environment <span class="math inline"><em>A</em>′</span>, ensuring ownership of this
+contribution and enabling user&nbsp;2 to choose the access rights to this
 modification. To keep up-to-date with changes in the original
 environment, the application will listen for changes in the inbox of
 environment <span class="math inline"><em>A</em></span>. All users who
 are subscribed to this inbox will receive notifications whenever a new
 modification is added.</p>
-<p>An inbox uses the LDP<a href="#fn5" class="footnote-ref" id="fnref5"
-role="doc-noteref"><sup>5</sup></a> vocabulary to index all resources
+<p>An inbox uses the LDP<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> vocabulary to index all resources
 within this container. A user who wishes to accept contributors for
 their environment should configure this inbox container with public
 <em>append</em> access rights, giving other users the opportunity to
 append a new resource to the container. Each inbox item represents an
-action using the schema.org vocabulary <span class="citation"
-data-cites="10.1002/asi.24744">[10]</span>.</p>
+action using the schema.org vocabulary&nbsp;<span class="citation" data-cites="10.1002/asi.24744">[10]</span>.</p>
 <div class="listing">
-<pre class="turtle" data-xleftmargin="5pt" data-fontsize="\small"><code>@prefix card: &lt;https://user2.solidweb.org/profile/card#&gt; .
-@prefix office: &lt;https://user2.solidweb.org/environments/user1-office/data.ttl#&gt; .
-
-&lt;&gt; a schema:CreateAction ;
-  schema:description &quot;Created a new object &#39;painting&#39; with label &#39;User 2&#39;&quot;@en ;
-  schema:agent &lt;https://ar-app.com/id&gt; ;  # AR application that created the action
-  schema:creator card:me ;                # Owner of the modification
-  schema:object office:painting ; schema:result office:painting .</code></pre>
+<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#81A1C1">@prefix card:</span><span style="color:#D8DEE9FF"> &lt;https://user2.solidweb.org/profile/card#&gt; .</span></span>
+<span class="line"><span style="color:#81A1C1">@prefix office:</span><span style="color:#D8DEE9FF"> &lt;https://user2.solidweb.org/environments/user1-office/data.ttl#&gt; .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D8DEE9FF">&lt;&gt; </span><span style="color:#81A1C1">a</span><span style="color:#81A1C1"> schema:</span><span style="color:#D8DEE9FF">CreateAction ;</span></span>
+<span class="line"><span style="color:#81A1C1">  schema:</span><span style="color:#D8DEE9FF">description </span><span style="color:#ECEFF4">"</span><span style="color:#A3BE8C">Created a new object 'painting' with label 'User 2'</span><span style="color:#ECEFF4">"</span><span style="color:#D8DEE9FF">@</span><span style="color:#8FBCBB">en</span><span style="color:#D8DEE9FF"> ;</span></span>
+<span class="line"><span style="color:#81A1C1">  schema:</span><span style="color:#D8DEE9FF">agent &lt;https://ar-app.com/id&gt; ;  </span><span style="color:#616E88"># AR application that created the action</span></span>
+<span class="line"><span style="color:#81A1C1">  schema:</span><span style="color:#D8DEE9FF">creator </span><span style="color:#81A1C1">card:</span><span style="color:#D8DEE9FF">me ;                </span><span style="color:#616E88"># Owner of the modification</span></span>
+<span class="line"><span style="color:#81A1C1">  schema:</span><span style="color:#D8DEE9FF">object </span><span style="color:#81A1C1">office:</span><span style="color:#D8DEE9FF">painting ; </span><span style="color:#81A1C1">schema:</span><span style="color:#D8DEE9FF">result </span><span style="color:#81A1C1">office:</span><span style="color:#D8DEE9FF">painting .</span></span></code></pre>
 </div>
-<p>Listing <a href="#lst:inbox-example" data-reference-type="ref"
-data-reference="lst:inbox-example">[lst:inbox-example]</a> demonstrates
-an individual appended inbox item to the Solid Pod of user 1. In the
-example we see a <code>schema:CreateAction</code> indicating that user 2
+<p>Listing&nbsp;<a href="#lst:inbox-example" data-reference-type="ref" data-reference="lst:inbox-example">[lst:inbox-example]</a> demonstrates
+an individual appended inbox item to the Solid Pod of user&nbsp;1. In the
+example we see a <code>schema:CreateAction</code> indicating that user&nbsp;2
 created a new <em>painting</em> object. Users can listen for
 notifications in the inbox to automatically apply changes to virtual
-objects in the shared AR environment as they are made <span
-class="citation"
-data-cites="10.1007/978-3-319-58068-5_33">[9]</span>.</p>
+objects in the shared AR environment as they are made&nbsp;<span class="citation" data-cites="10.1007/978-3-319-58068-5_33">[9]</span>.</p>
 <p>Positioning virtual objects is done using the POSO ontology, which
 allows the description of (virtual) objects to be placed relative to
 other objects using the <code>poso:isRelativeTo</code> predicate. When a
@@ -231,45 +199,35 @@ another user or agent. Individual modifications or contributions can be
 rejected by ignoring the individual inbox items where these changes are
 referenced. Future work might address the moderation of individual
 contributions by applying quality assessment crowdsourcing
-techniques <span class="citation"
-data-cites="10.1007/978-3-642-41338-4_17">[11]</span>.</p>
-<h2 data-number="2.2" id="reference-frame"><span
-class="header-section-number">2.2</span> Reference Frame</h2>
-<p>AR uses one or more reference frames <span class="citation"
-data-cites="mou2004frames">[6]</span> to anchor virtual objects in the
+techniques&nbsp;<span class="citation" data-cites="10.1007/978-3-642-41338-4_17">[11]</span>.</p>
+<h2 data-number="2.2" id="reference-frame"><span class="header-section-number">2.2</span> Reference Frame</h2>
+<p>AR uses one or more reference frames&nbsp;<span class="citation" data-cites="mou2004frames">[6]</span> to anchor virtual objects in the
 physical environment and to determine an absolute or relative position.
-This can be done through feature detection <span class="citation"
-data-cites="10.1145/3301275.3302278">[2]</span> that creates anchors
+This can be done through feature detection&nbsp;<span class="citation" data-cites="10.1145/3301275.3302278">[2]</span> that creates anchors
 based on visual patterns or artificial features such as fiducial
-markers <span class="citation"
-data-cites="kalaitzakis2021fiducial">[3]</span>.</p>
+markers&nbsp;<span class="citation" data-cites="kalaitzakis2021fiducial">[3]</span>.</p>
 <p>In order to enable interoperable applications to contribute to the
 same environment, all applications need to operate within the same
 reference frame. Our solution assumes that contributions to an
 environment not only include virtual objects, but also additional anchor
 points such as markers and detectable features that are contributed by
-multiple users <span class="citation"
-data-cites="fidmark">[12]</span>.</p>
-<h2 data-number="2.3" id="access-control"><span
-class="header-section-number">2.3</span> Access Control</h2>
+multiple users&nbsp;<span class="citation" data-cites="fidmark">[12]</span>.</p>
+<h2 data-number="2.3" id="access-control"><span class="header-section-number">2.3</span> Access Control</h2>
 <p>Solid enables users to have control over the access rights of their
 data and resources. In the scope of our solution, this entails the data
 that is shared in the AR environment by both the user who owns the
 environment and other users who make that own modifications to the
 environment.</p>
-<h1 data-number="3" id="conclusion-and-future-work"><span
-class="header-section-number">3</span> Conclusion and Future Work</h1>
+<h1 data-number="3" id="conclusion-and-future-work"><span class="header-section-number">3</span> Conclusion and Future Work</h1>
 <p>We presented a solution enabling the collaboration and sharing of
-personal augmented reality (AR) environments by using Solid Pods. Our
+personal augmented reality&nbsp;(AR) environments by using Solid Pods. Our
 solution allows these personal AR spaces to be discoverable within the
 physical space that these environments are augmenting by means of
-semantic beacons that advertise a URI <span class="citation"
-data-cites="10.1145/3627050.3627060">[8]</span>. While our proposed
+semantic beacons that advertise a URI&nbsp;<span class="citation" data-cites="10.1145/3627050.3627060">[8]</span>. While our proposed
 solution allows users to choose which collaborators to accept for the
 environment through the inbox system, it is currently impossible to
 accept individual contributions from a single collaborator. Future work
-might address this issue by applying crowdsourcing techniques <span
-class="citation" data-cites="10.1007/978-3-642-41338-4_17">[11]</span>
+might address this issue by applying crowdsourcing techniques&nbsp;<span class="citation" data-cites="10.1007/978-3-642-41338-4_17">[11]</span>
 to the data that is produced by other users.</p>
 <p>While we focused on the passive discovery using BLE advertisements to
 enable seamless discovery of the linked data, similar architectures can
@@ -279,8 +237,7 @@ of the environment.</p>
 keeping multiple <em>versions</em> of a virtual environment in different
 Pods (as proposed in our solution) versus using a stream of events that
 indicate changes to the environment, similar to the proposed work
-in <span class="citation"
-data-cites="01H1940MY7FSFV0W0J44E3CCX7">[13]</span>.</p>
+in&nbsp;<span class="citation" data-cites="01H1940MY7FSFV0W0J44E3CCX7">[13]</span>.</p>
 <div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-10.5555/2427126" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">G.
@@ -294,8 +251,7 @@ S. Lages and D. A. Bowman, <span>“<span class="nocase">Walking With
 Adaptive Augmented Reality Workspaces: Design and Usage
 Patterns</span>,”</span> in <em>Proceedings of the 24th international
 conference on intelligent user interfaces</em>, in IUI ’19. New York,
-NY, USA: Association for Computing Machinery, 2019, pp. 356–366. doi: <a
-href="https://doi.org/10.1145/3301275.3302278">10.1145/3301275.3302278</a>.</div>
+NY, USA: Association for Computing Machinery, 2019, pp. 356–366. doi: <a href="https://doi.org/10.1145/3301275.3302278">10.1145/3301275.3302278</a>.</div>
 </div>
 <div id="ref-kalaitzakis2021fiducial" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">M.
@@ -304,17 +260,14 @@ Vitzilaios, <span>“<span class="nocase">Fiducial Markers for Pose
 Estimation: Overview, Applications and Experimental Comparison of the
 ARTag, AprilTag, ArUco and STag Markers</span>,”</span> <em>Journal of
 Intelligent &amp; Robotic Systems</em>, vol. 101, pp. 1–26, 2021, doi:
-<a
-href="https://doi.org/10.1007/s10846-020-01307-9">10.1007/s10846-020-01307-9</a>.</div>
+<a href="https://doi.org/10.1007/s10846-020-01307-9">10.1007/s10846-020-01307-9</a>.</div>
 </div>
 <div id="ref-6948506" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[4] </div><div class="csl-right-inline">D.
 Rumiński and K. Walczak, <span>“<span>Semantic Contextual Augmented
-Reality Environments</span>,”</span> in <em><span
-class="nocase">Proceedings of the 2014 IEEE International Symposium on
+Reality Environments</span>,”</span> in <em><span class="nocase">Proceedings of the 2014 IEEE International Symposium on
 Mixed and Augmented Reality (ISMAR)</span></em>, 2014, pp. 401–404. doi:
-<a
-href="https://doi.org/10.1109/ISMAR.2014.6948506">10.1109/ISMAR.2014.6948506</a>.</div>
+<a href="https://doi.org/10.1109/ISMAR.2014.6948506">10.1109/ISMAR.2014.6948506</a>.</div>
 </div>
 <div id="ref-236306" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">K.
@@ -322,13 +275,11 @@ Ruth, T. Kohno, and F. Roesner, <span>“<span class="nocase">Secure
 <span>Multi-User</span> Content Sharing for Augmented Reality
 Applications</span>,”</span> in <em>28th USENIX security symposium
 (USENIX security 19)</em>, Santa Clara, CA: USENIX Association, Aug.
-2019, pp. 141–158. Available: <a
-href="https://www.usenix.org/conference/usenixsecurity19/presentation/ruth">https://www.usenix.org/conference/usenixsecurity19/presentation/ruth</a></div>
+2019, pp. 141–158. Available: <a href="https://www.usenix.org/conference/usenixsecurity19/presentation/ruth">https://www.usenix.org/conference/usenixsecurity19/presentation/ruth</a></div>
 </div>
 <div id="ref-mou2004frames" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[6] </div><div class="csl-right-inline">W.
-Mou, F. Biocca, C. B. Owen, A. Tang, F. Xiao, and L. Lim, <span>“<span
-class="nocase">Frames of Reference in Mobile Augmented Reality
+Mou, F. Biocca, C. B. Owen, A. Tang, F. Xiao, and L. Lim, <span>“<span class="nocase">Frames of Reference in Mobile Augmented Reality
 Displays</span>,”</span> <em>Journal of Experimental Psychology
 Applied</em>, vol. 10, no. 4, pp. 238–244, 2004.</div>
 </div>
@@ -338,8 +289,7 @@ Herskovitz, Y. F. Cheng, A. Guo, A. P. Sample, and M. Nebeling,
 <span>“<span class="nocase">XSpace: An Augmented Reality Toolkit for
 Enabling Spatially-Aware Distributed Collaboration</span>,”</span>
 <em>Proceedings of the ACM on Human-Computer Interaction</em>, vol. 6,
-no. ISS, Nov. 2022, doi: <a
-href="https://doi.org/10.1145/3567721">10.1145/3567721</a>.</div>
+no. ISS, Nov. 2022, doi: <a href="https://doi.org/10.1145/3567721">10.1145/3567721</a>.</div>
 </div>
 <div id="ref-10.1145/3627050.3627060" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[8] </div><div class="csl-right-inline">M.
@@ -348,11 +298,9 @@ Semantic Proximity Beacon Solution for Discovering and Detecting the
 Position of Physical Things</span>,”</span> in <em>Proceedings of the
 13th international conference on the internet of things</em>, in IoT
 ’23. New York, NY, USA: Association for Computing Machinery, 2024, pp.
-9–16. doi: <a
-href="https://doi.org/10.1145/3627050.3627060">10.1145/3627050.3627060</a>.</div>
+9–16. doi: <a href="https://doi.org/10.1145/3627050.3627060">10.1145/3627050.3627060</a>.</div>
 </div>
-<div id="ref-10.1007/978-3-319-58068-5_33" class="csl-entry"
-role="listitem">
+<div id="ref-10.1007/978-3-319-58068-5_33" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[9] </div><div class="csl-right-inline">S.
 Capadisli, A. Guy, C. Lange, S. Auer, A. Sambra, and T. Berners-Lee,
 <span>“<span>Linked Data Notifications: A Resource-Centric Communication
@@ -362,15 +310,12 @@ Springer International Publishing, 2017, pp. 537–553.</div>
 </div>
 <div id="ref-10.1002/asi.24744" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[10] </div><div class="csl-right-inline">A.
-Iliadis, A. Acker, W. Stevens, and S. B. Kavakli, <span>“<span
-class="nocase">One Schema to Rule them All: How Schema.org Models the
+Iliadis, A. Acker, W. Stevens, and S. B. Kavakli, <span>“<span class="nocase">One Schema to Rule them All: How Schema.org Models the
 World of Search</span>,”</span> <em>Journal of the Association for
 Information Science and Technology</em>, vol. n/a, no. n/a, 2023, doi:
-<a
-href="https://doi.org/10.1002/asi.24744">https://doi.org/10.1002/asi.24744</a>.</div>
+<a href="https://doi.org/10.1002/asi.24744">https://doi.org/10.1002/asi.24744</a>.</div>
 </div>
-<div id="ref-10.1007/978-3-642-41338-4_17" class="csl-entry"
-role="listitem">
+<div id="ref-10.1007/978-3-642-41338-4_17" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[11] </div><div class="csl-right-inline">M.
 Acosta, A. Zaveri, E. Simperl, D. Kontokostas, S. Auer, and J. Lehmann,
 <span>“<span>Crowdsourcing Linked Data Quality
@@ -378,52 +323,34 @@ Assessment</span>,”</span> in <em><span class="nocase">Proceedings of
 the Semantic Web – ISWC 2013</span></em>, H. Alani, L. Kagal, A. Fokoue,
 P. Groth, C. Biemann, J. X. Parreira, L. Aroyo, N. Noy, C. Welty, and K.
 Janowicz, Eds., Berlin, Heidelberg: Springer Berlin Heidelberg, 2013,
-pp. 260–276. doi: <a
-href="https://doi.org/{10.1007/978-3-642-41338-4_17}">{10.1007/978-3-642-41338-4_17}</a>.</div>
+pp. 260–276. doi: <a href="https://doi.org/{10.1007/978-3-642-41338-4_17}">{10.1007/978-3-642-41338-4_17}</a>.</div>
 </div>
 <div id="ref-fidmark" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[12] </div><div class="csl-right-inline">M.
-Van de Wynckel, I. Valadez, and B. Signer, <span>“<span
-class="nocase">FidMark: A Fiducial Marker Ontology for Semantically
-Describing Visual Markers</span>,”</span> in <em><span
-class="nocase">Proceedings of The Semantic Web – 21st International
+Van de Wynckel, I. Valadez, and B. Signer, <span>“<span class="nocase">FidMark: A Fiducial Marker Ontology for Semantically
+Describing Visual Markers</span>,”</span> in <em><span class="nocase">Proceedings of The Semantic Web – 21st International
 Conference</span></em>, 2024 (Accepted).</div>
 </div>
-<div id="ref-01H1940MY7FSFV0W0J44E3CCX7" class="csl-entry"
-role="listitem">
-<div class="csl-left-margin">[13] </div><div
-class="csl-right-inline">Slabbinck, Wout and Dedecker, Ruben and
-Vasireddy, Sindhu and Verborgh, Ruben and Colpaert, Pieter, <span>“<span
-class="nocase">Linked Data Event Streams in Solid LDP
+<div id="ref-01H1940MY7FSFV0W0J44E3CCX7" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Slabbinck, Wout and Dedecker, Ruben and
+Vasireddy, Sindhu and Verborgh, Ruben and Colpaert, Pieter, <span>“<span class="nocase">Linked Data Event Streams in Solid LDP
 Containers</span>,”</span> in <em><span class="nocase">Proceedings of
 the 8th Workshop on Managing the Evolution and Preservation of the Data
 Web (MEPDaW 2022)</span></em>, <span>Online</span>: <span>CEUR</span>,
 2023, pp. 28–35.</div>
 </div>
 </div>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn1"><p>Smart Energy Aware Systems Ontology: <a
-href="https://w3id.org/seas/" class="uri">https://w3id.org/seas/</a><a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Fiducial Marker Ontology: <a
-href="http://purl.org/fidmark/"
-class="uri">http://purl.org/fidmark/</a><a href="#fnref2"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Positioning System Ontology: <a
-href="http://purl.org/poso/" class="uri">http://purl.org/poso/</a><a
-href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Ontology for Managing Geometry: <a
-href="https://w3id.org/omg#" class="uri">https://w3id.org/omg#</a><a
-href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p><a href="https://www.w3.org/ns/ldp#"
-class="uri">https://www.w3.org/ns/ldp#</a><a href="#fnref5"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Smart Energy Aware Systems Ontology: <a href="https://w3id.org/seas/" class="uri">https://w3id.org/seas/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Fiducial Marker Ontology: <a href="http://purl.org/fidmark/" class="uri">http://purl.org/fidmark/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Positioning System Ontology: <a href="http://purl.org/poso/" class="uri">http://purl.org/poso/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Ontology for Managing Geometry: <a href="https://w3id.org/omg#" class="uri">https://w3id.org/omg#</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://www.w3.org/ns/ldp#" class="uri">https://www.w3.org/ns/ldp#</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </section>
 </main>
-</body>
-</html>
+
+</body></html>
