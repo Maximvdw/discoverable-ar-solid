@@ -9,6 +9,8 @@ if (urlParams.has('qr')) {
     modal.classList.add('show');
     backdrop.classList.add('show');
     modal.style.display = 'block';
+} else {
+    backdrop.parentNode.removeChild(backdrop);
 }
 
 const observer = new MutationObserver(function(mutationsList) {

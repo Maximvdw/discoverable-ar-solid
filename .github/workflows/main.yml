@@ -35,14 +35,6 @@ jobs:
           yarn install
           node ./postprocess.js
           cp -r ../output/* ../../website/_site
-      # - name: Build example application
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   working-directory: ./demonstrator
-      #   run: |
-      #     npm install
-      #     npm run build
-      #     cp -r ./dist ../../website/_site/demonstrator
       - name: Deploy site to GitHub
         uses: peaceiris/actions-gh-pages@v3
         with:
