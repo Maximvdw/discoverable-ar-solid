@@ -13,7 +13,7 @@ let paperHtml = fs.readFileSync(paperHtmlPath, 'utf-8');
 const pdfFiles = fs.readdirSync(srcDir).filter(file => path.extname(file) === '.pdf');
 
 async function process() {
-    pdfFiles.forEach(async pdfFile => {
+    await Promise.all(pdfFiles.map(async pdfFile => {
         const pdfPath = path.join(srcDir, pdfFile);
         const pages = await pdfToPng(pdfPath, {
             disableFontFace: false,
@@ -27,10 +27,10 @@ async function process() {
         const pngFileName = path.basename(pdfFile, '.pdf') + '.png';
         fs.cpSync(path.join(outputDir, pages[0].name), path.join(outputDir, pngFileName));
         fs.rmSync(path.join(outputDir, pages[0].name));
-    
+
         // Replace <embed src=...> with <img src=...> in paper.html
-        paperHtml = paperHtml.replace(`<embed src="images/${path.basename(pdfFile)}" />`, `<img src="images/${pngFileName}">`);
-    });
+        paperHtml = paperHtml.replace(`<embed src="images/${path.basename(pdfFile)}">`, `<img src="images/${pngFileName}">`);
+    }));
     
     // Get all listings from the paper
     const dom = new JSDOM(paperHtml);
