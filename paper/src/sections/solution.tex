@@ -1,16 +1,16 @@
 \section{Solution}
-The goal of our proposed solution is to allow multiple AR devices to contribute to a single shared AR environment or virtual space belonging to a user. We assume that the AR device used to contribute to augmented environments is a smart device that has access to the Web and can broadcast an RF signal. In the general architecture of our proposed solution, we let AR devices broadcast a semantic Bluetooth Low Energy~(BLE) beacon advertisement~\cite{10.1145/3627050.3627060} containing the URI of a specific resource as illustrated in \figurename~\ref{fig:architecture}. This resource contains information about the personal environment(s) owned by the user. Other devices can receive these advertisements when in proximity to the AR device and then access the URI to retrieve more information. For each environment, we have a link to a public inbox that can be used by other users to link their own modifications to the environment. Any modifications made to the superimposed space are stored in a Solid Pod owned by the user who made the modifications, which enables users to both contribute to the same environment as well as control the access rights of modifications made to these environments.
+The goal of our proposed solution is to allow multiple AR devices to contribute to a single shared AR environment or virtual space belonging to a user. We assume that the AR device used to contribute to augmented environments is a smart device that has access to the Web and can broadcast an RF signal. In the general architecture of our proposed solution, we let AR devices broadcast a semantic Bluetooth Low Energy~(BLE) beacon advertisement containing the URI of a specific resource. We utilise the advertising protocol of SemBeacon~\cite{10.1145/3627050.3627060} that advertises an AltBeacon advertisement and Eddystone-URL compatible scan response to broadcast semantic data URIs. In addition, SemBeacon has a BLE~v5.0 advertisement that prevents the need to shorten the URI to fit within the PDU. The use of SemBeacon to advertise the environment URI is illustrated in \figurename~\ref{fig:architecture}. This environment resource contains information about the personal environment(s) owned by the user. Other devices can receive these advertisements when in proximity to the AR device and then access the URI to retrieve more information. For each environment, we have a link to a public inbox that can be used by other users to link their own modifications to the environment. Any modifications made to the superimposed space are stored in a Solid Pod owned by the user who made the modifications, which enables users to both contribute to the same environment as well as control the access rights of modifications made to these environments.
 
-\begin{figure}[t]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.90]{images/sosy_architecture.pdf}
     \caption{A user's discoverable AR environments with two example users (\#1 and \#2) having a Solid Pod}
     \label{fig:architecture}
 \end{figure}
 
-On the left-hand side of the architecture shown in \figurename~\ref{fig:architecture}, we have a Solid Pod for user~1. The Pod contains all environments owned or modified by the user. An AR device connects to the user's Solid Pod through a Solid application that authenticates the user, allowing it to modify the resources when editing a virtual environment. In order to enable the discovery of these virtual spaces, the AR device broadcasts the \texttt{*.ttl} file of the environment it is currently in via BLE advertisements. This resource contains all the information about the environment, such as its location, any identifiable features and all virtual objects placed relative within this environment.
+On the left-hand side of the architecture shown in \figurename~\ref{fig:architecture}, we have a Solid Pod for user~1. The Pod contains all environments owned or modified by the user. An AR device connects to the user's Solid Pod through a Solid application that authenticates the user, allowing it to modify the resources when editing a virtual environment. In order to enable the discovery of these virtual spaces, the AR device broadcasts the \texttt{*.ttl} file of the environment it is currently in via BLE advertisements. This resource contains all the information about the environment, such as its location, any identifiable features and all virtual objects placed relative within this environment. While the URI that is broadcasted is public, the access to read this URI is controllable through access control lists implemented in Solid. SemBeacon offers a broadcasted flag to indicate if a URI is publicly accessible to prevent applications that do not have access to the resource from attempting to access it.
 
-When another user (e.g.~user~2) wants to modify the environment of user~1, they create a new resource including the modifications and additions to virtual objects or detectable features (e.g.~markers). The application will then notify user~1 about these changes by referencing the \texttt{user1-office/data.ttl} file in the \emph{inbox}~\cite{10.1007/978-3-319-58068-5_33} container of the environment that is being modified.
+When another user (e.g.~user~2) wants to modify the environment of user~1, they create a new resource including the modifications and additions to virtual objects or detectable features (e.g.~markers). The application will then notify user~1 about these changes by referencing the \texttt{user1-office/data.ttl} file in the \emph{inbox}~\cite{10.1007/978-3-319-58068-5_33} container of the environment that is being modified. Solid also enables the access rights of these modifications, more information about access control for environments and modifications is provided in Section~\ref{subsec:access}.
 
 \begin{figure}[htb]
 \begin{minipage}{1\columnwidth}
@@ -20,13 +20,14 @@ When another user (e.g.~user~2) wants to modify the environment of user~1, they 
 \end{minipage}
 \begin{minipage}{.55\columnwidth}
 \begin{minted}[xleftmargin=5pt,fontsize=\small]{turtle}
-<#> a seas:Room ; rdfs:label "Our Lab"@en ;
+<> a seas:Room ; rdfs:label "Our Lab"@en ;
+  ldp:inbox <./inbox/> ;
   vcard:address [ ... ] .
-<#printer_marker> a fidmark:AruCo ;
+:printer_marker a fidmark:AruCo ;
   fidmark:markerIdentifier 12 .
-<#printer_info> a sosa:FeatureOfInterest ;
+:printer_info a sosa:FeatureOfInterest ;
   poso:hasPosition [ 
-    poso:isRelativeTo <#printer_marker> ;
+    poso:isRelativeTo :printer_marker ;
     ... ] ;
   omg:hasGeometry [ ... ] .
 \end{minted}
@@ -40,7 +41,7 @@ When another user (e.g.~user~2) wants to modify the environment of user~1, they 
 
 An alternative architecture is illustrated in \figurename~\ref{fig:architecture_2}. In this scenario, a fixed Bluetooth beacon is placed in a room, broadcasting the URI of a single environment. This scenario can be used for public physical environments, such as a meeting room or laboratory, enabling collaboration in AR. Similar to personal environments shown in \figurename~\ref{fig:architecture}, users store their changes to an environment in their Solid Pod and reference these changes in the inbox of the environment.
 
-\subsection{Usage}
+\subsection{Usage} \label{subsec:usage}
 Our solution is depicted in \figurename~\ref{fig:flow} where we showcase the flow of our architecture previously illustrated in \figurename~\ref{fig:architecture}. Two users with AR devices have their own Solid Pod. User~1 will create an environment ($A$) on their Pod and subscribe to the inbox container of this environment. Once the environment is ready, the AR device will use the SemBeacon specification to advertise the URI of the environment to enable its discovery.
 
 \begin{figure}[htb]
@@ -69,14 +70,16 @@ An inbox uses the LDP\footnote{\url{https://www.w3.org/ns/ldp\#}} vocabulary to 
 
 Listing~\ref{lst:inbox-example} demonstrates an individual appended inbox item to the Solid Pod of user~1. In the example we see a \code{schema:CreateAction} indicating that user~2 created a new \textit{painting} object. Users can listen for notifications in the inbox to automatically apply changes to virtual objects in the shared AR environment as they are made~\cite{10.1007/978-3-319-58068-5_33}.
 
-Positioning virtual objects is done using the POSO ontology, which allows the description of (virtual) objects to be placed relative to other objects using the \code{poso:isRelativeTo} predicate. When a user wants to place an object in an environment using an absolute position that is not relative to a marker or detectable feature, the same predicate can be used to indicate that the absolute position is relative to the environment.
+Positioning virtual objects is done using the POSO ontology~\cite{10.1007/978-3-031-19433-7_14}, which allows the description of (virtual) objects to be placed relative to other objects using the \code{poso:isRelativeTo} predicate. When a user wants to place an object in an environment using an absolute position that is not relative to a marker or detectable feature, the same predicate can be used to indicate that the absolute position is relative to the environment.
 
 The final AR environment combining all modifications made by other users is created by the AR application that has access to the Solid Pod. Our architecture allows users to easily ignore all contributions of another user or agent. Individual modifications or contributions can be rejected by ignoring the individual inbox items where these changes are referenced. Future work might address the moderation of individual contributions by applying quality assessment crowdsourcing techniques~\cite{10.1007/978-3-642-41338-4_17}.
 
 \subsection{Reference Frame}
 AR uses one or more reference frames~\cite{mou2004frames} to anchor virtual objects in the physical environment and to determine an absolute or relative position. This can be done through feature detection~\cite{10.1145/3301275.3302278} that creates anchors based on visual patterns or artificial features such as fiducial markers~\cite{kalaitzakis2021fiducial}.
 
-In order to enable interoperable applications to contribute to the same environment, all applications need to operate within the same reference frame. Our solution assumes that contributions to an environment not only include virtual objects, but also additional anchor points such as markers and detectable features that are contributed by multiple users~\cite{fidmark}.
+In order to enable interoperable applications to contribute to the same environment, all applications need to operate within the same reference frame. Our solution assumes that contributions to an environment not only include virtual objects, but also additional anchor points such as markers and detectable features that are contributed by multiple users~\cite{fidmark}. By semantically describing these reference frames as objects on itself, the POSO ontology can be used to position virtual objects relative to these anchors.
 
-\subsection{Access Control}
-Solid enables users to have control over the access rights of their data and resources. In the scope of our solution, this entails the data that is shared in the AR environment by both the user who owns the environment and other users who make that own modifications to the environment.
+\subsection{Access Control} \label{subsec:access}
+Solid enables users to have control over the access rights of their data and resources. In the scope of our solution, this entails the data that is shared in the AR environment (i.e.~virtual objects and anchors) by both the user who owns the environment and other users who make that own modifications to the environment.
+
+Each modification to an environment is made in the Solid Pod of the user who made the modification, giving them full control on the access rights to these modifications -- as well as control on the actions which are normally created in the original environment to notify the original owner of the environment (see Section~\ref{subsec:usage}).
